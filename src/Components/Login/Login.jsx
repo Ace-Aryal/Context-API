@@ -1,13 +1,13 @@
 import React,{useContext, useState} from "react";
-import userContext from "../userContext/userContext";
+import UserContext from "../userContext/UserContext";
 function Login () {
 const [username ,setUsername] = useState("")
 const [password,setPassword ] = useState("")
 
-const {setUser} = useContext(userContext)
+const {setUser} = useContext(UserContext) // destructuring value provided from provider
 const handleSubmit = e=>{
     e.preventDefault()
-
+ setUser(username)
 }
     return(
         <div>

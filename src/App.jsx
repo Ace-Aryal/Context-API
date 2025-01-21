@@ -1,17 +1,21 @@
 import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Login from './Components/Login/Login';
+import UserContextProvider from "./userContext/UserContextProvider"
 
+import Login from './Components/Login/Login';
+import Profile from './Components/Profile/Profile';
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-     <>
+     
+ <UserContextProvider>
     <h1 className="text-red">Test</h1>
-    <Login/>
-    </>
-  );
+      <Login/>
+      <Profile />
+      </UserContextProvider>
+    
+  
+  )
+
 }
 
 export default App;
